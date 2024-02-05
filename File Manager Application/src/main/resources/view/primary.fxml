@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox fx:id="mainContainer" alignment="CENTER" spacing="30" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="palmer.matthew.filehandler.controller.PrimaryController" stylesheets="@../css/primary.css">
+    <children>
+        <ImageView fx:id="logoImage">
+            <image>
+                <Image url="@../images/logo.png" /> <!-- Update with your logo path -->
+            </image>
+        </ImageView>
+        <Label fx:id="welcomeLabel" text="File Handler (Version 1.0)" styleClass="header-label"/>
+        <GridPane fx:id="loginForm" alignment="CENTER" hgap="10" vgap="15">
+            <padding>
+                <Insets top="20" right="40" bottom="20" left="40"/>
+            </padding>
+            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="field-label"/>
+            <TextField fx:id="userIdField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="field-label"/>
+            <PasswordField fx:id="passPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <HBox spacing="10" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="2">
+                <Button fx:id="loginButton" text="Login" onAction="#loginBtnHandler" styleClass="login-btn"/>
+                <Button fx:id="registerBtn" text="Register" onAction="#registerBtnHandler" styleClass="register-btn"/>
+            </HBox>
+        </GridPane>
+    </children>
+</VBox>

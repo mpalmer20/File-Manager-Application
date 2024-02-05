@@ -1,0 +1,37 @@
+.root {
+    -fx-font-family: 'Arial';
+}
+
+.header-label {
+    -fx-font-size: 24px;
+    -fx-text-fill: #2c3e50;
+    -fx-alignment: center;
+}
+
+.field-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #34495e;
+    -fx-padding: 5px;
+}
+
+.text-field, .password-field {
+    -fx-font-size: 14px;
+    -fx-max-width: 250px;
+    -fx-pref-width: 250px; /* Ensures the fields expand to fill the available space */
+}
+
+.register-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px; /* Ensure even top/bottom and left/right padding */
+    -fx-max-width: 250px;
+    -fx-pref-width: 250px; /* Button width */
+    -fx-alignment: center; /* Ensure text alignment is centered */
+}
+
+.grid-pane {
+    -fx-alignment: center;
+}
+
+

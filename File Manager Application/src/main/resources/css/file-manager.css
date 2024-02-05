@@ -1,0 +1,43 @@
+.header {
+    -fx-background-color: #2C3E50;
+}
+
+.header-label {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.logout-btn, .action-btn {
+    -fx-background-color: #3498DB;
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.action-btn {
+    -fx-background-color: #06a015;
+}
+
+#uploadFileButton {
+    -fx-background-color: #4CAF50;
+}
+
+#uploadFileButton {
+    -fx-background-color: #FFC107;
+}
+
+#deleteFileButton {
+    -fx-background-color: #F44336;
+}
+
+
+.logout-btn:hover, .action-btn:hover {
+    -fx-opacity: 0.8;
+}
+
+.table-view {
+    -fx-background-color: #ECF0F1;
+}

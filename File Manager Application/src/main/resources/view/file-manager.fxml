@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="palmer.matthew.filehandler.controller.FileManagerController" stylesheets="@../css/file-manager.css">
+    <top>
+        <HBox styleClass="header" spacing="20" alignment="CENTER_LEFT"  >
+            <Label text="File Manager" styleClass="header-label"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="logout-btn"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <Button fx:id="uploadFileButton" text="Upload File" onAction="#handleUpload" styleClass="action-btn"/>
+            <TableView fx:id="fileTable">
+                <columns>
+                    <TableColumn fx:id="fileNameColumn" text="File Name"/>
+                    <TableColumn fx:id="fileSizeColumn" text="Size"/>
+                    <TableColumn fx:id="lastModifiedColumn" text="Last Modified"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="updateFileButton" text="Update Selected File" onAction="#handleUpdate" styleClass="action-btn"/>
+                <Button fx:id="deleteFileButton" text="Delete Selected File" onAction="#handleDelete" styleClass="action-btn"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

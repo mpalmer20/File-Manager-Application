@@ -1,0 +1,21 @@
+# Use ubuntu:trusty as the base image
+FROM ubuntu:trusty
+
+# Install sqlite3
+RUN apt-get update && \
+    apt-get install -y sqlite3 libsqlite3-dev && \
+    mkdir /db
+
+
+RUN apt-get -y install sudo
+	  
+# Copy DDL scripts to the container
+COPY ./db/* /db/ 
+ 
+# Initialize the database and execute the SQL scripts
+RUN echo
+RUN sh /db/init_db.sh
+
+ 
+# Keep the container running (if desired)
+CMD ["tail", "-f", "/dev/null"]

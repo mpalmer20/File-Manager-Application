@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # Note : This container does not have a sqlite server, rather setup sqlite environment and 
+  # Create the necessary schema for the app.
+  sqlite-db:
+    container_name: comp20081-sqlite
+    build:
+      context: .
+      dockerfile: sqlite
+    environment:
+      - DATABASE_PATH=/database/sqlite/comp20081.db   
+    volumes:
+      - ./database:/db # Maps the ./database directory on the host to /db in the container
+      - ./db:/db/scripts # Optional: Maps the DDL scripts for easy access or updates
+ 
+      
+  file-server:
+    container_name: comp20081-files-container
+    image: atmoz/sftp
+    volumes:
+      - ./database/files:/home/sftpuser/upload  
+    command: sftpuser:pass:1001
+    ports:
+      - "2222:22"
+      
+networks:
+  comp20081_network:
+    driver: bridge
+ 
